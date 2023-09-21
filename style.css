@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+
+:root{
+    --veryDarkCyan : hsl(183, 100%, 15%);
+    --darkGrayishCyan : hsl(186, 14%, 43%);
+    --grayishCyan : hsl(184, 14%, 56%);
+    --lightGrayishCyan : hsl(185, 41%, 84%);
+    --veryLIghtGrayishCyan : hsl(189, 41%, 97%);
+    --StrongCyan : hsl(172, 67%, 45%);
+    --White : hsl(0, 0%, 100%);
+    --fontSize : 24px;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family:'Space Mono', sans-serif;
+}
+
+body{
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--lightGrayishCyan);
+    gap: 4rem;
+	font-weight: 700;
+}
+
+h2{
+    letter-spacing: 0.5rem;
+    color: var(--veryDarkCyan);
+}
+
+h2 span{
+    display: block;
+}
+
+main{
+    background-color: var(--White);
+    border-radius: 20px;
+    max-width: 900px;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+p,
+label{
+    color: gray;
+    font-size: 15px;
+}
+
+#left-container,
+#right-container{
+    display: flex;
+    flex-direction: column;
+}
+
+#left-container{
+    gap: 2rem;
+}
+
+input{
+    margin-top: 0.3rem;
+    text-align: end;
+    border: transparent;
+    background: var(--veryLIghtGrayishCyan);
+    padding: 0.5rem 0.4rem;
+    cursor: pointer;
+	flex : 1;
+}
+
+input:active {
+    border: 1px solid var(--StrongCyan);
+}
+
+.custom-input {
+	padding: 10px;
+    width: 100%;
+    border-radius: 8px;
+	text-align: center;
+}
+
+#bill,
+#number-people
+{
+    display: flex;
+    position: relative;
+}
+
+img{
+    width: 15px;
+    position: absolute;
+    top: 15px;
+    left: 1rem;
+}
+
+main #left-container-middle .percentage-choice{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    width: 100%;
+}
+
+.button{
+    background-color: var(--veryDarkCyan);
+    color: var(--White);
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.button:hover{
+    background-color: var(--StrongCyan);
+    color: var(--veryDarkCyan);
+}
+
+.button.active{
+    background-color: var(--StrongCyan);
+    color: var(--veryDarkCyan);
+}
+
+#right-container{
+    gap: 3rem;
+    padding: 2rem;
+    background-color: var(--veryDarkCyan);
+    border-radius: 10px;
+}
+
+#right-container-top,
+#right-container-middle{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tip{
+    font-size: 13px;
+    color: var(--White);
+}
+
+.person{
+    color: var(--White);
+    font-size: 10px;
+    opacity: 0.7;
+}
+
+.tip-total{
+    display: flex;
+    align-items: center;
+    position: relative;
+    font-size : 30px;
+    color:  var(--StrongCyan);
+}
+
+#button-reset{
+    cursor: pointer;
+    letter-spacing: 0.2rem;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 10px;
+    margin-top: 2rem;
+}
+
+.has-reset-activated{
+    background-color: var(--StrongCyan);
+    color: var(--veryDarkCyan);
+}
+
+@media all and (max-width:800px){
+	main{
+        display: flex;
+        flex-direction: column;
+    }
+    #left-container,
+    #right-container{
+        width: 100%;
+    }
+
+    #left-container-middle .percentage-choice{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    }
+    
+    #left-container-middle input,
+    .button{
+        width: 45%;
+        padding: 10px;
+    }
+}
+
+@media all and (max-width:300px){
+    input,
+    .button{
+        width: 100%;
+    }
+	
+}
